@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Find all the Pokemons</title>
+    <script type="text/javascript" src="src/data.js"></script>
     <script type="text/javascript" src="src/index.js"></script>
 
     <style media="screen">
@@ -37,6 +38,20 @@
       input:focus {
         outline: none;
       }
+
+      .pokemon-container {
+        float:left;
+        width:250px;
+        margin:auto;
+      }
+
+      .center-text {
+        text-align: center;
+      }
+
+      .flip-image {
+        color:#2d72fc;
+      }
     </style>
   </head>
   <body>
@@ -45,6 +60,10 @@
       <form id="pokemon-seach-form" class="" action="" method="">
         <input id="pokemon-seach-input" type="text" name="" value="">
       </form>
+
+      <div id="pokemon-container">
+
+      </div>
     </div>
   </body>
 </html>
