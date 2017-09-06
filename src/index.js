@@ -19,10 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
     // Event delegation
     if (event.target.classList.contains('flip-image')) {
       // 1. Get some input from the user
+      const pokemonName = event.target.dataset.pokename
 
       // 2. Do some data manipulation / access
+      const foundPokemon = pokemonList.findByName(pokemonName)
+      foundPokemon.flipImage()
 
       // 3. Render to the screen
+      foundPokemon.getElement().innerHTML = foundPokemon.render()
     }
   })
 })

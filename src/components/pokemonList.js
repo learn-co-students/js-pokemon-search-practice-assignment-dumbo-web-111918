@@ -22,4 +22,10 @@ class PokemonList {
       .map(pokemon => pokemon.render())
       .join('')
   }
+
+  findByName(pokemonName) {
+    return this.pokemons.find(function(pokemon) {
+      return pokemon.name === pokemonName
+    })
+  }
 }

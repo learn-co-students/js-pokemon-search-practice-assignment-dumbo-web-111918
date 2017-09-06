@@ -6,6 +6,18 @@ class Pokemon {
     this.backSprite = backSprite
   }
 
+  flipImage() {
+    if (this.currentImg === this.frontSprite) {
+      this.currentImg = this.backSprite
+    } else {
+      this.currentImg = this.frontSprite
+    }
+  }
+
+  getElement() {
+    return document.getElementById(this.name)
+  }
+
   render() {
     return `
       <div class="pokemon-card" id="${this.name}">
