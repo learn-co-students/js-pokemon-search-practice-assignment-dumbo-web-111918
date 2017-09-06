@@ -19,18 +19,7 @@ class PokemonList {
 
   render() {
     const filteredPokemonTemplate = this.filteredPokemons.map(function renderPokemon(pokemon) {
-      return `
-        <div class="pokemon-card" id="${pokemon.name}">
-          <div style="width:230px;margin:10px;background:#fecd2f;color:#2d72fc" class="pokemon-frame">
-          <h1 class="center-text">${pokemon.name}</h1>
-          <div style="width:239px;margin:auto">
-            <div style="width:96px;margin:auto">
-              <img id="${pokemon.name}-img" src="${pokemon.frontSprite}">
-            </div>
-          </div>
-          <p style="padding:10px;" class="center-text flip-image" data-pokename="${pokemon.name}" data-action="flip-image">flip card</p>
-          </div>
-        </div>`
+      return pokemon.render()
     }).join('')
 
     return filteredPokemonTemplate
