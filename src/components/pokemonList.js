@@ -1,5 +1,8 @@
 class PokemonList {
   constructor(pokemons) {
+    this.containerElement = document.getElementById('pokemon-container')
+    this.searchElement = document.getElementById('pokemon-search-input')
+
     this.filteredPokemons = []
     this.pokemons = pokemons
       .map(pokemon => {
@@ -9,6 +12,14 @@ class PokemonList {
           pokemon.sprites.back
         )
       })
+  }
+
+  getContainerElement() {
+    return this.containerElement
+  }
+
+  getSearchElement() {
+    return this.searchElement
   }
 
   filter(searchTerm) {
