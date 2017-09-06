@@ -27,7 +27,7 @@ We're building out a search feature in our application (no backend persistence).
 **Note** When creating constructors and prototypes, you may use ES6 classes or just create the constructor function separately. Your choice.
 
 1. **Create your refactored OO Solution in a new file.(`index.js`)**
-3. The Pokemon class should be able to be called like: `new Pokemon()`
+3. The Pokemon class should be able to be called like: `new Pokemon(/* some arguments */)`
 4. Instances of Pokemon should have a method called 'render' that returns a string representing an `li` HTML element containing the Pokemon's name and image.
 8. Implement a filter functionality for your Pokemon list.
 9. Implement a flip functionality on each Pokemon.
