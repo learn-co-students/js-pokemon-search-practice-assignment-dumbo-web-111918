@@ -1,6 +1,7 @@
 class Pokemon {
   constructor(name, frontSprite, backSprite) {
     this.name = name
+    this.currentImg = frontSprite
     this.frontSprite = frontSprite
     this.backSprite = backSprite
   }
@@ -12,7 +13,7 @@ class Pokemon {
         <h1 class="center-text">${this.name}</h1>
         <div style="width:239px;margin:auto">
           <div style="width:96px;margin:auto">
-            <img id="${this.name}-img" src="${this.frontSprite}">
+            <img id="${this.name}-img" src="${this.currentImg}">
           </div>
         </div>
         <p style="padding:10px;" class="center-text flip-image" data-pokename="${this.name}" data-action="flip-image">flip card</p>
