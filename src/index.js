@@ -15,7 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
     pokemonContainer.innerHTML = pokemonList.render()
   })
 
-  pokemonContainer.addEventListener('click', function() {
-    console.log('handle flip on click')
+  pokemonContainer.addEventListener('click', function(event) {
+    // Event delegation
+    if (event.target.classList.contains('flip-image')) {
+      // 1. Get some input from the user
+
+      // 2. Do some data manipulation / access
+
+      // 3. Render to the screen
+    }
   })
 })
