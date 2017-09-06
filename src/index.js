@@ -8,19 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // 1. Get some input from the user
     const searchTerm = event.target.value
 
-    // if (!searchTerm) {
-      // pokemonContainer.innerHTML = ''
-      // return
-    // }
-
     // 2. Do some data manipulation / access
-    // const filteredPokemon = POKEMONS.filter(function(pokemon) {
-      // return pokemon.name.includes(searchTerm) // OR return pokemon.name.match(new RegExp(searchTerm))
-    // })
+    pokemonList.filter(searchTerm)
 
     // 3. Render to the screen
-    // const filteredPokemonTemplate = filteredPokemon.map(renderPokemon).join('')
-    // pokemonContainer.innerHTML = filteredPokemonTemplate
+    pokemonContainer.innerHTML = pokemonList.render()
   })
 
   pokemonContainer.addEventListener('click', function() {
