@@ -17,7 +17,7 @@ We're building out a search feature in our application (no backend persistence).
 
 ### Part One - Create a solution without utilizing Object Orientation(no classes) ****NO jQuery****.
 
-1. **Create a working solution in `vanillaJS.js`**
+1. **Create a working solution in `procedural.js`**
   **DO NOT SKIP PART ONE LEAVE THE SOLUTION FOR PART ONE IN ITS OWN FILE**
 
 2. When a users types in the search box, pokemon should appear and be filtered by the input text. (Hint: You could use a "keyup" event bound to the Pokemon filtering input field)
