@@ -1,3 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-
+document.addEventListener('DOMContentLoaded', () => {
+  console.log(POKEMON)
+  //YOUR CODE HERE
 })
