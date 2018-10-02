@@ -30,6 +30,8 @@ search.
   - `$ npm install -g json-server`
   - `$ json-server --watch db.json`
 
+- If you aren't yet familiar with `fetch`, don't worry. We've included the same data in a file called `pokemon.js`. You should see the `POKEMON` `console.log`ged when you start this app.
+
 ---
 
 ### Deliverables:
