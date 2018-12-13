@@ -43,9 +43,25 @@ search.
 
 ---
 
-### Constructors and Prototypes (feel free to use either ES5 or ES6)
+### Sample Markup:
 
-**Note** When creating constructors and prototypes, you may use ES6 classes or just create the constructor function
-separately. Your choice.
+Each pokemon card might look something like this in HTML:
+
+```html
+
+<div class="pokemon-container">
+  <div style="width:230px;margin:10px;background:#fecd2f;color:#2d72fc" class="pokemon-frame">
+    <h1 class="center-text">charizard</h1>
+    <div style="width:239px;margin:auto">
+      <div style="width:96px;margin:auto">
+        <img data-id="7" data-action="flip" class="toggle-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png">
+      </div>
+    </div>
+  </div>
+</div>
+
+```
+
+---
 
 ![](https://media.giphy.com/media/HZpCCbcWc0a3u/giphy.gif)
