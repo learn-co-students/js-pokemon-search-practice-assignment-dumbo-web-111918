@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // dataset always returns string data we can use == to leverage type coerscion to compare:
       // '1' === 1 //false
       // '1' == 1 //true
-      const targetPoke = POKEMON.find(pokeObj => pokeObj.id == event.target.dataset.id) //arrow fn no curlies {} will IMPLICITLY RETURN
+      //arrow fn no curlies {} will IMPLICITLY RETURN
+      const targetPoke = POKEMON.find(pokeObj => pokeObj.id == event.target.dataset.id)
       // alternatively, parseInt('1') // 1
       // const targetPoke = POKEMON.find(pokeObj => pokeObj.id === parseInt(event.target.dataset.id))
       if (event.target.src === targetPoke.sprites.front) {
