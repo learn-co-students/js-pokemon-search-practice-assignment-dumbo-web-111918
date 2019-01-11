@@ -44,11 +44,6 @@ input:focus {
   color: #2d72fc
 }
 
-.image-container {
-  width: 239px;
-  margin: auto;
-}
-
 .pokemon-image {
   width: 96px;
   margin: auto;
