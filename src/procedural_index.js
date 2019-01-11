@@ -1,23 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+/*********************** DOM Selectors ****************************************/
+  const pokemonContainer = document.querySelector('#pokemon-container')
+  const pokemonSearchForm = document.querySelector('#pokemon-search-form')
 
-  const pokeCardHTML = POKEMON.map(pokeObj => (
-    `<div class="pokemon-container">
-      <div style="width:230px;margin:10px;background:#fecd2f;color:#2d72fc" class="pokemon-frame">
-        <h1 class="center-text">${pokeObj.name}</h1>
-        <div style="width:239px;margin:auto">
-          <div style="width:96px;margin:auto">
-            <img data-id="${pokeObj.id}" data-action="flip" class="toggle-sprite" src="${pokeObj.sprites.front}">
-          </div>
-        </div>
-      </div>
-    </div>`
-  )).join('') //generate string of HTML
+/*********************** Initial Render ***************************************/
+  pokemonContainer.innerHTML = renderAllPokemon(POKEMON) //add all pokemon to page on initial page load
 
-    document.getElementById('pokemon-container').innerHTML = pokeCardHTML //add this large string of HTML to the DOM
-
-  document.getElementById('pokemon-container').addEventListener('click', event => {
+/************************ Event Listeners *************************************/
+  pokemonContainer.addEventListener('click', (event) => {
     if (event.target.dataset.action === 'flip') {
+      // dataset always returns string data we can use == to leverage type coerscion to compare:
+      // '1' === 1 //false
+      // '1' == 1 //true
+      //arrow fn no curlies {} will IMPLICITLY RETURN
       const targetPoke = POKEMON.find(pokeObj => pokeObj.id == event.target.dataset.id)
+      // alternatively, parseInt('1') // 1
+      // const targetPoke = POKEMON.find(pokeObj => pokeObj.id === parseInt(event.target.dataset.id))
       if (event.target.src === targetPoke.sprites.front) {
         event.target.src = targetPoke.sprites.back
       } else {
@@ -26,21 +24,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  document.getElementById('pokemon-search-form').addEventListener('input', event => {
+  pokemonSearchForm.addEventListener('input', (event) => {
     const filteredPokes = POKEMON.filter(pokeObj => pokeObj.name.includes(event.target.value.toLowerCase()))
-    const filteredPokeHTML = filteredPokes.map(pokeObj => (
-      `<div class="pokemon-container">
-        <div style="width:230px;margin:10px;background:#fecd2f;color:#2d72fc" class="pokemon-frame">
-          <h1 class="center-text">${pokeObj.name}</h1>
-          <div style="width:239px;margin:auto">
-            <div style="width:96px;margin:auto">
-              <img data-id="${pokeObj.id}" data-action="flip" class="toggle-sprite" src="${pokeObj.sprites.front}">
-            </div>
-          </div>
-        </div>
-      </div>`
-      )).join('')
-
-    document.getElementById('pokemon-container').innerHTML = filteredPokeHTML.length ? filteredPokeHTML : `<p><center>There are no Pokémon here</center></p>`
+    const filteredPokeHTML = renderAllPokemon(filteredPokes)
+    // if our filter returns no pokemon, filteredPokeHTML will be an empty string
+    // empty strings are `falsey` in js
+    // if (filteredPokeHTML) { // empty string is `falsey`
+    //   pokemonContainer.innerHTML = filteredPokeHTML
+    // } else {
+    //   pokemonContainer.innerHTML = `<p><center>There are no Pokémon here</center></p>`
+    // }
+    // using a ternary:
+    pokemonContainer.innerHTML = filteredPokeHTML ? filteredPokeHTML : `<p><center>There are no Pokémon here</center></p>`
   })
 })
+
+/************************* Helper Fns for Producing HTML **********************/
+function renderAllPokemon(pokemonArray) {
+  return pokemonArray.map(renderSinglePokemon).join('')
+}
+
+function renderSinglePokemon(pokemon) {
+  return (`
+  <div class="pokemon-card">
+    <div class="pokemon-frame">
+      <h1 class="center-text">${pokemon.name}</h1>
+      <div class="pokemon-image">
+        <img data-id="${pokemon.id}" data-action="flip" class="toggle-sprite" src="${pokemon.sprites.front}">
+      </div>
+    </div>
+  </div>`)
+}
