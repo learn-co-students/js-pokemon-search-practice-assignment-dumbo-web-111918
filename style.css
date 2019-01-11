@@ -31,9 +31,21 @@ input:focus {
   outline: none;
 }
 
-.pokemon-container {
+.pokemon-card {
   float: left;
   width: 250px;
+  margin: auto;
+}
+
+.pokemon-frame {
+  width: 230px;
+  margin: 10px;
+  background: #fecd2f;
+  color: #2d72fc
+}
+
+.pokemon-image {
+  width: 96px;
   margin: auto;
 }
 

@@ -45,22 +45,20 @@ search.
 
 ### Sample Markup:
 
-Each pokemon card might look something like this in HTML:
+Each Pokemon card might look something like this in HTML:
 
 ```html
-
-<div class="pokemon-container">
-  <div style="width:230px;margin:10px;background:#fecd2f;color:#2d72fc" class="pokemon-frame">
+<div class="pokemon-card">
+  <div class="pokemon-frame">
     <h1 class="center-text">charizard</h1>
-    <div style="width:239px;margin:auto">
-      <div style="width:96px;margin:auto">
-        <img data-id="7" data-action="flip" class="toggle-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png">
-      </div>
+    <div class="pokemon-image">
+      <img data-id="7" data-action="flip" class="toggle-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png">
     </div>
   </div>
 </div>
-
 ```
+
+Take a look at `/style.css` if you're curious about how this app is styled. Applying the classes appropriately from the snippet above should style your Pokemon cards.
 
 ---
 
