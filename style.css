@@ -56,3 +56,7 @@ input:focus {
 .flip-image {
   color: #2d72fc;
 }
+
+.pokemon-image {
+  font-size: 12pt;
+}
